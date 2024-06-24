@@ -19,6 +19,11 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
         let totalObligationFormatted = results.totalObligation.toLocaleString();
 
         let resultsHTML = `<div class="total-obligation">Your 30 year Legal Obligation with ${company} is <span class="amount">$${totalObligationFormatted}</span></div>`;
+
+        results.years.forEach((totalFee, year) => {
+            resultsHTML += `<div class="yearly-breakdown">Year ${year + 1}: <span class="amount">$${totalFee.toLocaleString()}</span></div>`;
+        });
+
         document.getElementById('results').innerHTML = resultsHTML;
 
         // Show results and hide loading spinner and text
@@ -41,12 +46,14 @@ document.getElementById('done-button').addEventListener('click', function() {
 
 function calculateFees(currentFee, additionalFees, increaseRate) {
     let totalObligation = 0;
+    let years = [];
 
     for (let year = 0; year < 30; year++) {
         const annualIncrease = Math.pow(1 + increaseRate, year);
         const totalFee = (currentFee + additionalFees) * annualIncrease;
         totalObligation += totalFee;
+        years.push(totalFee);
     }
 
-    return { totalObligation };
+    return { years, totalObligation };
 }
