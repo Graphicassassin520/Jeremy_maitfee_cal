@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5" id="calculator-container">
         <h1 class="text-center mb-4">Timeshare Maintenance Fee Calculator</h1>
         <form id="calculator-form">
             <div class="form-group">
@@ -46,13 +46,14 @@
                 <small class="form-text text-muted">Select the annual percentage increase.</small>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Calculate</button>
-            <button type="button" id="print-button" class="btn btn-secondary btn-block mt-2" style="display:none;">Print Results</button>
         </form>
-        <div id="results" class="mt-4">
-            <!-- Results will be displayed here -->
-        </div>
-        <div id="loading-spinner" class="spinner" style="display: none;">
+    </div>
+    <div id="overlay" class="overlay">
+        <div id="loading-spinner" class="spinner">
             <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div id="results" class="results">
+            <!-- Results will be displayed here -->
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
