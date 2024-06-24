@@ -70,6 +70,13 @@ h1 {
     color: #dc3545;
 }
 
+.yearly-breakdown {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dc3545;
+    margin: 10px 0;
+}
+
 #done-button {
     display: none;
     margin-top: 20px;
@@ -79,7 +86,6 @@ h1 {
     width: 80%;
     left: 10%;
 }
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
