@@ -72,17 +72,20 @@ h1 {
 
 .breakdown-container {
     margin: 20px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .breakdown-table {
-    width: 100%;
+    width: auto;
     font-size: 14px; /* Half the size */
     color: black; /* Black font */
     text-align: left;
+    border-collapse: collapse;
 }
 
 .breakdown-table td {
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 #done-button {
