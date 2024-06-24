@@ -15,12 +15,11 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
         let totalObligationFormatted = results.totalObligation.toLocaleString();
 
         let resultsHTML = `<div class="total-obligation">Your 30 year Legal Obligation with ${company} is <span class="amount">$${totalObligationFormatted}</span></div>`;
-        resultsHTML += `<button id="done-button" class="btn btn-primary btn-block">Done</button>`;
-
         document.getElementById('results').innerHTML = resultsHTML;
 
         // Show results and hide loading spinner
         document.getElementById('loading-spinner').style.display = 'none';
+        document.getElementById('loading-text').style.display = 'none';
         document.getElementById('results').style.display = 'block';
         document.getElementById('done-button').style.display = 'block';
 
