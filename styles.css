@@ -33,13 +33,26 @@ h1 {
     display: none;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     animation: fadeIn 1s ease-in-out;
 }
 
 #loading-spinner {
-    font-size: 50px;
+    font-size: 150px; /* 3 times bigger */
     color: #28a745;
     animation: spin 2s linear infinite;
+}
+
+#loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745;
+    animation: fadeText 2s ease-in-out infinite;
+}
+
+@keyframes fadeText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 #results {
@@ -51,10 +64,9 @@ h1 {
     animation: fadeIn 2s ease-in-out;
 }
 
-#results .dollar-sign {
-    font-size: 40px;
-    color: #28a745;
-    vertical-align: middle;
+#results .amount {
+    font-size: 36px; /* Larger and more prominent */
+    color: #dc3545;
 }
 
 #done-button {
