@@ -19,10 +19,15 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
         let totalObligationFormatted = results.totalObligation.toLocaleString();
 
         let resultsHTML = `<div class="total-obligation">Your 30 year Legal Obligation with ${company} is <span class="amount">$${totalObligationFormatted}</span></div>`;
-
-        results.years.forEach((totalFee, year) => {
-            resultsHTML += `<div class="yearly-breakdown">Year ${year + 1}: <span class="amount">$${totalFee.toLocaleString()}</span></div>`;
-        });
+        
+        resultsHTML += `<div class="breakdown-container"><table class="breakdown-table"><tbody>`;
+        for (let i = 0; i < 15; i++) {
+            resultsHTML += `<tr>
+                <td>Year ${i + 1}: $${results.years[i].toLocaleString()}</td>
+                <td>Year ${i + 16}: $${results.years[i + 15].toLocaleString()}</td>
+            </tr>`;
+        }
+        resultsHTML += `</tbody></table></div>`;
 
         document.getElementById('results').innerHTML = resultsHTML;
 
